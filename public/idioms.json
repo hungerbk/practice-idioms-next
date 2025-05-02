@@ -1,0 +1,79 @@
+[
+    {
+      "id": 1,
+      "characters": "同病相憐",
+      "pronunciation": "동병상련",
+      "meaning": "같은 병자끼리 가엾게 여긴다는 뜻으로, 어려운 처지에 있는 사람끼리 서로 불쌍히 여겨 동정 하고 서로 도움",
+      "difficulty": "easy"
+    },
+    {
+      "id": 2,
+      "characters": "雪上加霜",
+      "pronunciation": "설상가상",
+      "meaning": "눈 위에 또 서리가 내린다는 뜻으로, 어려운 일이 겹침을 이름 또는 '환난이 거듭됨'을 비유하여 이르는 말",
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "characters": "類類相從",
+      "pronunciation": "유유상종",
+      "meaning": "사물은 같은 무리끼리 따르고, 같은 사람은 서로 찾아 모인다는 뜻",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "characters": "以熱治熱",
+      "pronunciation": "이열치열",
+      "meaning": "열은 열로써 다스린다는 뜻으로, 힘으로 또는 강한 것에는 강한 것으로 상대함을 이르는 말",
+      "difficulty": "easy"
+    },
+    {
+      "id": 5,
+      "characters": "草綠同色",
+      "pronunciation": "초록동색",
+      "meaning": "풀빛과 녹색은 같은 빛깔이란 뜻으로, 같은 처지의 사람과 어울리거나 기우는 것",
+      "difficulty": "easy"
+    },
+    {
+      "id": 6,
+      "characters": "桑田碧海",
+      "pronunciation": "상전벽해",
+      "meaning": "뽕나무밭이 푸른 바다가 되었다라는 뜻으로, 세상이 몰라 볼 정도로 바뀐 것. 세상의 모든 일 이 엄청나게 변해버린 것",
+      "difficulty": "medium"
+    },
+    {
+      "id": 7,
+      "characters": "轉禍爲福",
+      "pronunciation": "전화위복",
+      "meaning": "화가 바뀌어 오히려 복이 된다는 뜻으로, 어떤 불행한 일이라도 끊임없는 노력과 강인한 의지로 힘쓰면 불행을 행복으로 바꾸어 놓을 수 있다는 말",
+      "difficulty": "easy"
+    },
+    {
+      "id": 8,
+      "characters": "苛斂誅求",
+      "pronunciation": "가렴주구",
+      "meaning": "가혹하게 세금을 거두거나 백성의 재물을 억지로 뺏음",
+      "difficulty": "medium"
+    },
+    {
+      "id": 9,
+      "characters": "自中之亂",
+      "pronunciation": "자중지란",
+      "meaning": "같은 패 안에서 일어나는 싸움",
+      "difficulty": "medium"
+    },
+    {
+      "id": 10,
+      "characters": "附和雷同",
+      "pronunciation": "부화뇌동",
+      "meaning": "우레 소리에 맞춰 함께한다는 뜻으로, 자신의 뚜렷한 소신 없이 그저 남이 하는 대로 따라가는 것을 의미함",
+      "difficulty": "medium"
+    },
+    {
+      "id": 11,
+      "characters": "五里霧中",
+      "pronunciation": "오리무중",
+      "meaning": "무슨 일에 대하여 방향이나 상황을 알 길이 없음, 일의 갈피를 잡기 어려움",
+      "difficulty": "hard"
+    }
+]
