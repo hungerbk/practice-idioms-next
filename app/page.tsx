@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import GameSetup from './components/GameSetup'
-import GameScreen from './components/GameScreen'
+import GameSetup from './components/game/GameSetup'
+import GameScreen from './components/game/GameScreen'
 import { Difficulty, Idiom } from './types/game'
 
 export default function Home() {
