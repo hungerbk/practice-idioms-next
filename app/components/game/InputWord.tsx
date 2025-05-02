@@ -15,18 +15,21 @@ export default function InputWord({
   isWrong = false
 }: InputWordProps) {
   return (
-    <div className="mx-auto max-w-2xl rounded-lg bg-white p-3 shadow-lg">
+    <div
+      className={`mx-auto max-w-2xl rounded-lg bg-white p-3 shadow-lg ${
+        isWrong ? 'animate-shake bg-red-100' : ''
+      }`}>
       {/* 입력 폼 */}
       <form
         onSubmit={onSubmit}
-        className="flex gap-2">
+        className={'flex gap-2'}>
         <input
           type="text"
           value={userInput}
           onChange={e => onInputChange(e.target.value)}
-          className={`flex-1 rounded-md border border-gray-300 px-3 py-1.5 transition-all ${
-            isWrong ? 'animate-shake' : ''
-          }`}
+          className={
+            'flex-1 rounded-md border border-gray-300 px-3 py-1.5 transition-all'
+          }
           placeholder="사자성어를 입력하세요"
         />
         <Button type="submit">입력</Button>
