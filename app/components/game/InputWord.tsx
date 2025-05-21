@@ -17,7 +17,7 @@ export default function InputWord({
   return (
     <div
       className={`mx-auto max-w-2xl rounded-lg bg-white p-3 shadow-lg ${
-        isWrong ? 'animate-shake bg-red-100' : ''
+        isWrong ? 'animate-shake bg-red-200' : ''
       }`}>
       {/* 입력 폼 */}
       <form
