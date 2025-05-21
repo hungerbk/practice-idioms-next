@@ -1,5 +1,5 @@
-import { Idiom } from '../../types/game'
-import { useGameStore } from '../../store/gameStore'
+import { Idiom } from '@/app/types/game'
+import { useGameStore } from '@/app/store/gameStore'
 
 interface GameResultProps {
   results: Idiom[]

@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Difficulty, Idiom } from '../types/game'
+import { Difficulty, Idiom } from '@/app/types/game'
 
 interface GameState {
   gameState: {

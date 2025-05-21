@@ -1,9 +1,9 @@
 'use client'
 
+import FallingIdiom from '@/app/components/game/FallingWord'
+import GameControls from '@/app/components/game/InputWord'
+import { Difficulty, GameState, Idiom } from '@/app/types/game'
 import { useCallback, useEffect, useState } from 'react'
-import { Difficulty, GameState, Idiom } from '../../types/game'
-import FallingIdiom from './FallingWord'
-import GameControls from './InputWord'
 
 interface GameScreenProps {
   difficulty: Difficulty

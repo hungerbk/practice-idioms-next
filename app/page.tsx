@@ -1,10 +1,10 @@
 'use client'
 
-import GameSetup from './components/game/GameSetup'
-import GameScreen from './components/game/GameScreen'
-import GameResult from './components/game/GameResult'
-import { useGameStore } from './store/gameStore'
-import { Difficulty, Idiom } from './types/game'
+import GameSetup from '@/app/components/game/GameSetup'
+import GameScreen from '@/app/components/game/GameScreen'
+import GameResult from '@/app/components/game/GameResult'
+import { useGameStore } from '@/app/store/gameStore'
+import { Difficulty, Idiom } from '@/app/types/game'
 
 export default function Home() {
   const { gameState, gameResults, setGameState, setGameResults } =

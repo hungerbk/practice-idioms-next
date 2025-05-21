@@ -1,5 +1,5 @@
 import { FormEvent } from 'react'
-import Button from '../common/Button'
+import Button from '@/app/components/common/Button'
 
 interface InputWordProps {
   userInput: string

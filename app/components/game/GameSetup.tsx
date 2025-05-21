@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Difficulty } from '../../types/game'
-import Button from '../common/Button'
-import RadioButton from '../common/RadioButton'
+import { Difficulty } from '@/app/types/game'
+import Button from '@/app/components/common/Button'
+import RadioButton from '@/app/components/common/RadioButton'
 
 interface GameSetupProps {
   onStart: (difficulty: Difficulty, count: number) => void
