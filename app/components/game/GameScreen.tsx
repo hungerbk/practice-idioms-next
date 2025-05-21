@@ -63,7 +63,7 @@ export default function GameScreen({
       const minGap = 150
       let attempts = 0
       const maxAttempts = 100
-
+      //TODO: 게임 영역 수정 필요. 단어 시작 위치가 문제 영역과 겹치는 문제. 하단 경계선 부분에 눈에 보이는 글자가 아닌 글자의 영역이 닿으면 게임이 종료되는 문제
       // 화면 경계 설정 (게임 UI 영역 제외)
       const padding = 100
       const maxWidth = window.innerWidth - padding * 2
