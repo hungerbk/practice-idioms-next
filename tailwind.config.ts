@@ -8,6 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        paper: {
+          50: '#faf6f1',
+          100: '#f5ede3',
+          200: '#e8d9c5',
+          300: '#d9c2a7',
+          400: '#c7a989',
+          500: '#b38f6b',
+          600: '#a57d5a',
+          700: '#8a6649',
+          800: '#70523d',
+          900: '#5b4332'
+        }
+      },
       keyframes: {
         shake: {
           '0%, 100%': { transform: 'translateX(0)' },

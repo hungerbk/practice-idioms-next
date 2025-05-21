@@ -1,5 +1,6 @@
 import { Idiom } from '@/app/types/game'
 import { useGameStore } from '@/app/store/gameStore'
+import Button from '@/app/components/common/Button'
 
 interface GameResultProps {
   results: Idiom[]
@@ -28,11 +29,11 @@ export default function GameResult({ results }: GameResultProps) {
           </div>
         ))}
       </div>
-      <button
+      <Button
         onClick={resetGame}
-        className="w-full rounded-md bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600">
+        fullWidth>
         다시 시작
-      </button>
+      </Button>
     </div>
   )
 }

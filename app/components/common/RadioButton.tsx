@@ -17,8 +17,8 @@ export default function RadioButton({
     <label
       className={`relative flex cursor-pointer items-center justify-center rounded-lg border p-3 text-sm font-medium transition-colors ${
         isSelected
-          ? 'border-blue-500 bg-blue-50 text-blue-700'
-          : 'border-gray-200 bg-white text-gray-700 hover:bg-gray-50'
+          ? 'border-paper-600 bg-paper-50 text-paper-700'
+          : 'border-paper-200 text-paper-700 hover:bg-paper-50 bg-white'
       } ${className}`}>
       <input
         type="radio"

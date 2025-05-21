@@ -20,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 py-8">
+    <main className="bg-paper-100 min-h-screen py-8">
       <div className="container mx-auto px-4">
         {!gameState ? (
           <GameSetup onStart={handleGameStart} />

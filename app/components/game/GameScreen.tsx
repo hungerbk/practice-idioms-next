@@ -252,14 +252,14 @@ export default function GameScreen({
   }
 
   return (
-    <div className="fixed inset-0 overflow-hidden bg-gray-100">
+    <div className="bg-paper-100 fixed inset-0 overflow-hidden">
       {/* 생명력 표시 */}
       <div className="absolute right-4 top-4 flex space-x-2">
         {Array.from({ length: 3 }).map((_, index) => (
           <div
             key={index}
             className={`h-6 w-6 rounded-full ${
-              index < gameState.lives ? 'bg-red-500' : 'bg-gray-200'
+              index < gameState.lives ? 'bg-paper-600' : 'bg-paper-200'
             }`}
           />
         ))}
@@ -268,7 +268,7 @@ export default function GameScreen({
       {/* 상단 문제 영역 */}
       <div className="absolute left-0 right-0 top-0 p-4">
         <div className="mx-auto max-w-2xl rounded-lg bg-white/90 p-4 shadow-lg backdrop-blur-sm">
-          <p className="text-center text-xl font-medium text-gray-800">
+          <p className="text-paper-900 text-center text-xl font-medium">
             {gameState.idioms[gameState.currentIdiomIndex]?.meaning || ''}
           </p>
         </div>
