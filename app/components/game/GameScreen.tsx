@@ -290,10 +290,10 @@ export default function GameScreen({
 
       {/* 하단 경계선 */}
       <div
-        className="absolute left-0 right-0 border-t-4 border-red-500"
+        className="bg-paper-200 absolute left-0 right-0"
         style={{
           top: `${screenHeight - 100}px`,
-          zIndex: 2
+          height: '100px'
         }}
       />
 
