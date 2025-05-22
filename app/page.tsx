@@ -1,7 +1,7 @@
 'use client'
 
 import GameResult from '@/app/components/game/GameResult'
-import GameScreen from '@/app/components/game/GameScreen'
+import GameScreen from '@/app/components/game/falling/GameScreen'
 import GameSelect from '@/app/components/game/GameSelect'
 import GameSetup from '@/app/components/game/GameSetup'
 import {

@@ -1,6 +1,6 @@
 'use client'
 
-import FallingIdiom from '@/app/components/game/FallingWord'
+import FallingIdiom from '@/app/components/game/falling/FallingWord'
 import GameControls from '@/app/components/game/InputWord'
 import { Difficulty, GameState, Idiom } from '@/app/types/game'
 import { useCallback, useEffect, useState } from 'react'
@@ -252,7 +252,7 @@ export default function GameScreen({
   }
 
   return (
-    <div className="bg-paper-100 fixed inset-0 overflow-hidden">
+    <div className="fixed inset-0 overflow-hidden bg-paper-100">
       {/* 생명력 표시 */}
       <div className="absolute right-4 top-4 flex space-x-2">
         {Array.from({ length: 3 }).map((_, index) => (
@@ -268,7 +268,7 @@ export default function GameScreen({
       {/* 상단 문제 영역 */}
       <div className="absolute left-0 right-0 top-0 p-4">
         <div className="mx-auto max-w-2xl rounded-lg bg-white/90 p-4 shadow-lg backdrop-blur-sm">
-          <p className="text-paper-900 text-center text-xl font-medium">
+          <p className="text-center text-xl font-medium text-paper-900">
             {gameState.idioms[gameState.currentIdiomIndex]?.meaning || ''}
           </p>
         </div>
@@ -290,7 +290,7 @@ export default function GameScreen({
 
       {/* 하단 경계선 */}
       <div
-        className="bg-paper-200 absolute left-0 right-0"
+        className="absolute left-0 right-0 bg-paper-200"
         style={{
           top: `${screenHeight - 100}px`,
           height: '100px'
