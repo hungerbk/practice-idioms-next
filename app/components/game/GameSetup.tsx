@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { Difficulty } from '@/app/types/game'
 import Button from '@/app/components/common/Button'
 import RadioButton from '@/app/components/common/RadioButton'
+import ResetGameButton from '@/app/components/game/common/ResetGameButton'
+import { Difficulty } from '@/app/types/game'
+import { useState } from 'react'
 
 interface GameSetupProps {
   onStart: (difficulty: Difficulty, count: number) => void
@@ -68,11 +69,14 @@ export default function GameSetup({ onStart }: GameSetupProps) {
           />
         </div>
 
-        <Button
-          type="submit"
-          fullWidth>
-          게임 시작
-        </Button>
+        <div className="space-y-3">
+          <Button
+            type="submit"
+            fullWidth>
+            게임 시작
+          </Button>
+          <ResetGameButton />
+        </div>
       </form>
     </div>
   )

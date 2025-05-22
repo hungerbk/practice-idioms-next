@@ -1,14 +1,11 @@
+import ResetGameButton from '@/app/components/game/common/ResetGameButton'
 import { Idiom } from '@/app/types/game'
-import { useGameStore } from '@/app/store/gameStore'
-import Button from '@/app/components/common/Button'
 
 interface GameResultProps {
   results: Idiom[]
 }
 
 export default function GameResult({ results }: GameResultProps) {
-  const { resetGame } = useGameStore()
-
   return (
     <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-lg">
       <h2 className="mb-6 text-center text-2xl font-bold">게임 결과</h2>
@@ -29,11 +26,7 @@ export default function GameResult({ results }: GameResultProps) {
           </div>
         ))}
       </div>
-      <Button
-        onClick={resetGame}
-        fullWidth>
-        다시 시작
-      </Button>
+      <ResetGameButton />
     </div>
   )
 }
