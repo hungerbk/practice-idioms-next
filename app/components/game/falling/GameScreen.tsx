@@ -1,7 +1,7 @@
 'use client'
 
 import FallingIdiom from '@/app/components/game/falling/FallingWord'
-import GameControls from '@/app/components/game/InputWord'
+import GameControls from '@/app/components/game/common/InputWord'
 import { Difficulty, GameState, Idiom } from '@/app/types/game'
 import { useCallback, useEffect, useState } from 'react'
 

@@ -1,9 +1,9 @@
 'use client'
 
-import GameResult from '@/app/components/game/GameResult'
+import GameResult from '@/app/components/game/common/GameResult'
 import GameScreen from '@/app/components/game/falling/GameScreen'
-import GameSelect from '@/app/components/game/GameSelect'
-import GameSetup from '@/app/components/game/GameSetup'
+import GameSelect from '@/app/components/game/common/GameSelect'
+import GameSetup from '@/app/components/game/common/GameSetup'
 import {
   GameInitState,
   createInitialGameState,
