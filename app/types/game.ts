@@ -1,5 +1,7 @@
 export type Difficulty = 'easy' | 'medium' | 'hard' | 'mixed'
 
+export type GameType = 'falling-idioms' | 'matching-idioms'
+
 export interface Idiom {
   id: number
   characters: string

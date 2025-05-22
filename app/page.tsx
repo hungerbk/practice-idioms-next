@@ -1,17 +1,34 @@
 'use client'
 
-import GameSetup from '@/app/components/game/GameSetup'
-import GameScreen from '@/app/components/game/GameScreen'
 import GameResult from '@/app/components/game/GameResult'
-import { useGameStore } from '@/app/store/gameStore'
-import { Difficulty, Idiom } from '@/app/types/game'
+import GameScreen from '@/app/components/game/GameScreen'
+import GameSelect from '@/app/components/game/GameSelect'
+import GameSetup from '@/app/components/game/GameSetup'
+import {
+  GameInitState,
+  createInitialGameState,
+  useGameStore
+} from '@/app/store/gameStore'
+import { Difficulty, GameType, Idiom } from '@/app/types/game'
 
 export default function Home() {
   const { gameState, gameResults, setGameState, setGameResults } =
     useGameStore()
 
+  const handleGameSelect = (gameType: GameType) => {
+    const initialState: GameInitState = {
+      type: gameType,
+      difficulty: null,
+      count: null
+    }
+    setGameState(initialState)
+  }
+
   const handleGameStart = (difficulty: Difficulty, count: number) => {
-    setGameState({ difficulty, count })
+    if (!gameState) return
+
+    const newState = createInitialGameState(gameState.type, difficulty, count)
+    setGameState(newState)
     setGameResults(null)
   }
 
@@ -19,19 +36,34 @@ export default function Home() {
     setGameResults(results)
   }
 
-  return (
-    <main className="bg-paper-100 min-h-screen py-8">
-      <div className="container mx-auto px-4">
-        {!gameState ? (
-          <GameSetup onStart={handleGameStart} />
-        ) : gameResults ? (
-          <GameResult results={gameResults} />
-        ) : (
+  const renderGameScreen = () => {
+    if (!gameState?.difficulty || !gameState?.count) return null
+
+    switch (gameState.type) {
+      case 'falling-idioms':
+        return (
           <GameScreen
             difficulty={gameState.difficulty}
             count={gameState.count}
             onGameEnd={handleGameEnd}
           />
+        )
+      default:
+        return null
+    }
+  }
+
+  return (
+    <main className="min-h-screen bg-paper-100 py-8">
+      <div className="container mx-auto px-4">
+        {!gameState ? (
+          <GameSelect onSelect={handleGameSelect} />
+        ) : !gameState.difficulty ? (
+          <GameSetup onStart={handleGameStart} />
+        ) : gameResults ? (
+          <GameResult results={gameResults} />
+        ) : (
+          renderGameScreen()
         )}
       </div>
     </main>
