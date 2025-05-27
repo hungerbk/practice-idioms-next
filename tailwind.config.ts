@@ -23,14 +23,22 @@ const config: Config = {
         }
       },
       keyframes: {
-        shake: {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '25%': { transform: 'translateX(-4px)' },
-          '75%': { transform: 'translateX(4px)' }
+        wrong: {
+          '0%, 100%': {
+            transform: 'translateX(0)',
+            backgroundColor: '#fecaca'
+          },
+          '25%': { transform: 'translateX(-4px)', backgroundColor: '#fecaca' },
+          '75%': { transform: 'translateX(4px)', backgroundColor: '#fecaca' }
+        },
+        correct: {
+          '0%, 100%': { backgroundColor: 'transparent' },
+          '50%': { backgroundColor: '#86efac' }
         }
       },
       animation: {
-        shake: 'shake 0.2s ease-in-out 0s 2'
+        wrong: 'wrong 0.2s ease-in-out 0s 2',
+        correct: 'correct 0.3s'
       }
     }
   },

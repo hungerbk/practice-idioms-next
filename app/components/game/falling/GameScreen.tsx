@@ -41,6 +41,7 @@ export default function GameScreen({
   const [fallingIdioms, setFallingIdioms] = useState<FallingIdiomPosition[]>([])
   const [screenHeight, setScreenHeight] = useState(0)
   const [isWrong, setIsWrong] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(false)
 
   // 화면 높이 설정
   const updateScreenHeight = useCallback(() => {
@@ -184,6 +185,12 @@ export default function GameScreen({
 
     if (isCorrect) {
       setIsWrong(false)
+      setIsCorrect(true)
+      // 정답 애니메이션이 끝나면 isCorrect를 false로 설정
+      setTimeout(() => {
+        setIsCorrect(false)
+      }, 300)
+
       // 정답인 경우 해당 단어를 화면에서 제거
       setFallingIdioms(prev =>
         prev.filter(idiom => idiom.id !== currentIdiom.id)
@@ -212,6 +219,13 @@ export default function GameScreen({
         }))
       }
     } else {
+      setIsWrong(true)
+      setIsCorrect(false)
+      // 오답 애니메이션이 끝나면 isWrong을 false로 설정
+      setTimeout(() => {
+        setIsWrong(false)
+      }, 200)
+
       // 오답인 경우 모든 단어를 한 칸씩 내림
       setFallingIdioms(prev =>
         prev.map(idiom => ({
@@ -219,10 +233,6 @@ export default function GameScreen({
           top: idiom.top + WORD_HEIGHT
         }))
       )
-
-      // 오답 애니메이션 표시
-      setIsWrong(true)
-      setTimeout(() => setIsWrong(false), 400) // 애니메이션 시간과 동일하게 설정
 
       if (gameState.lives === 1) {
         // 생명이 1일 때 오답을 입력하면 게임 종료
@@ -304,6 +314,7 @@ export default function GameScreen({
           onInputChange={setUserInput}
           onSubmit={handleSubmit}
           isWrong={isWrong}
+          isCorrect={isCorrect}
         />
       </div>
     </div>

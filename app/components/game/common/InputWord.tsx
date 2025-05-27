@@ -6,18 +6,20 @@ interface InputWordProps {
   onInputChange: (value: string) => void
   onSubmit: (e: FormEvent) => void
   isWrong?: boolean
+  isCorrect?: boolean
 }
 
 export default function InputWord({
   userInput,
   onInputChange,
   onSubmit,
-  isWrong = false
+  isWrong = false,
+  isCorrect = false
 }: InputWordProps) {
   return (
     <div
       className={`mx-auto max-w-2xl rounded-lg bg-white p-3 shadow-lg ${
-        isWrong ? 'animate-shake bg-red-200' : ''
+        isWrong ? 'animate-wrong' : isCorrect ? 'animate-correct' : ''
       }`}>
       {/* 입력 폼 */}
       <form
