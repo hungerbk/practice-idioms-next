@@ -1,3 +1,4 @@
+import Button from '@/app/components/common/Button'
 import ResetGameButton from '@/app/components/game/common/ResetGameButton'
 import { Idiom } from '@/app/types/game'
 
@@ -26,7 +27,10 @@ export default function GameResult({ results }: GameResultProps) {
           </div>
         ))}
       </div>
-      <ResetGameButton />
+      <div className="mb-6 space-y-3">
+        <Button fullWidth>다시하기</Button>
+        <ResetGameButton />
+      </div>
     </div>
   )
 }
