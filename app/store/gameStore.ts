@@ -41,6 +41,7 @@ interface GameStore {
   setGameState: (state: GameStateType | GameInitState | null) => void
   setGameResults: (results: Idiom[] | null) => void
   resetGame: () => void
+  restartGame: () => void
 }
 
 // 게임 타입별 초기 상태 생성 함수
@@ -80,5 +81,18 @@ export const useGameStore = create<GameStore>(set => ({
   gameResults: null,
   setGameState: state => set({ gameState: state }),
   setGameResults: results => set({ gameResults: results }),
-  resetGame: () => set({ gameState: null, gameResults: null })
+  resetGame: () => set({ gameState: null, gameResults: null }),
+  restartGame: () =>
+    set(state => {
+      if (!state.gameState) return state
+
+      return {
+        gameState: {
+          type: state.gameState.type,
+          difficulty: null,
+          count: null
+        },
+        gameResults: null
+      }
+    })
 }))
