@@ -1,7 +1,7 @@
 'use client'
 
 import FallingIdiom from '@/app/components/game/falling/FallingWord'
-import GameControls from '@/app/components/game/common/InputWord'
+import InputWord from '@/app/components/game/common/InputWord'
 import { Difficulty, GameState, Idiom } from '@/app/types/game'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -299,7 +299,7 @@ export default function GameScreen({
 
       {/* 단어 입력 */}
       <div className="absolute bottom-0 left-0 right-0 p-6">
-        <GameControls
+        <InputWord
           userInput={userInput}
           onInputChange={setUserInput}
           onSubmit={handleSubmit}
