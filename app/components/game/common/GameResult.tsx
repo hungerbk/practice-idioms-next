@@ -1,7 +1,7 @@
 import Button from '@/app/components/common/Button'
 import ResetGameButton from '@/app/components/game/common/ResetGameButton'
-import { Idiom } from '@/app/types/game'
 import { useGameStore } from '@/app/store/gameStore'
+import { Idiom } from '@/app/types/game'
 
 interface GameResultProps {
   results: Idiom[]
@@ -11,25 +11,28 @@ export default function GameResult({ results }: GameResultProps) {
   const { restartGame } = useGameStore()
 
   return (
-    <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-lg">
+    <section className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-lg">
       <h2 className="mb-6 text-center text-2xl font-bold">게임 결과</h2>
-      <div className="mb-6 space-y-4">
+      <ul className="mb-6 space-y-4">
         {results.map((result: Idiom, index: number) => (
-          <div
+          <li
             key={index}
-            className="rounded-lg border p-4">
-            <p className="font-medium">{result.characters}</p>
-            <p className="text-sm text-gray-600">{result.pronunciation}</p>
-            <p className="text-sm text-gray-600">{result.meaning}</p>
-            <p
-              className={`mt-2 text-sm font-medium ${
-                result.isCorrect ? 'text-green-600' : 'text-red-600'
+            className="relative rounded-lg border p-4">
+            <span
+              className={`absolute right-2 top-3 rounded-lg px-2 py-0 text-sm font-medium ${
+                result.isCorrect
+                  ? 'bg-green-100 text-green-600'
+                  : 'bg-red-100 text-red-600'
               }`}>
               {result.isCorrect ? '정답' : '오답'}
+            </span>
+            <p className="text-lg font-bold">
+              {result.pronunciation} ({result.characters})
             </p>
-          </div>
+            <p className="text-sm text-gray-600">{result.meaning}</p>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className="mb-6 space-y-3">
         <Button
           onClick={restartGame}
@@ -38,6 +41,6 @@ export default function GameResult({ results }: GameResultProps) {
         </Button>
         <ResetGameButton />
       </div>
-    </div>
+    </section>
   )
 }
