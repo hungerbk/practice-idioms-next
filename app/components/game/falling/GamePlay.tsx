@@ -5,7 +5,7 @@ import InputWord from '@/app/components/game/common/InputWord'
 import { Difficulty, GameState, Idiom } from '@/app/types/game'
 import { useCallback, useEffect, useState } from 'react'
 
-interface GameScreenProps {
+interface GamePlayProps {
   difficulty: Difficulty
   count: number
   onGameEnd: (results: Idiom[]) => void
@@ -22,11 +22,11 @@ interface FallingIdiomPosition {
 // 단어의 높이 (text-2xl의 실제 높이)
 const WORD_HEIGHT = 24
 
-export default function GameScreen({
+export default function GamePlay({
   difficulty,
   count,
   onGameEnd
-}: GameScreenProps) {
+}: GamePlayProps) {
   const [gameState, setGameState] = useState<GameState>({
     difficulty,
     count,

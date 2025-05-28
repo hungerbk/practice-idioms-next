@@ -1,9 +1,9 @@
 'use client'
 
 import GameResult from '@/app/components/game/common/GameResult'
-import GameScreen from '@/app/components/game/falling/GameScreen'
 import GameSelect from '@/app/components/game/common/GameSelect'
 import GameSetup from '@/app/components/game/common/GameSetup'
+import GamePlay from '@/app/components/game/falling/GamePlay'
 import {
   GameInitState,
   createInitialGameState,
@@ -36,13 +36,13 @@ export default function Home() {
     setGameResults(results)
   }
 
-  const renderGameScreen = () => {
+  const renderGamePlay = () => {
     if (!gameState?.difficulty || !gameState?.count) return null
 
     switch (gameState.type) {
       case 'falling-idioms':
         return (
-          <GameScreen
+          <GamePlay
             difficulty={gameState.difficulty}
             count={gameState.count}
             onGameEnd={handleGameEnd}
@@ -63,7 +63,7 @@ export default function Home() {
         ) : gameResults ? (
           <GameResult results={gameResults} />
         ) : (
-          renderGameScreen()
+          renderGamePlay()
         )}
       </div>
     </main>
